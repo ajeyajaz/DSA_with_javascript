@@ -17,3 +17,24 @@ class Solution {
         return result;
     }
 }
+
+
+// Time Complexity sqr(n)
+// Space Complexity sqr(n)
+
+const n = 36;
+const result = [];
+
+for (let i = 0; i * i <=n; i++){
+
+    if(n % i === 0){
+        result.push(i);
+
+        if(i !== n / i){
+            result.push(n / i)
+        }
+    }
+}
+
+
+console.log(result)
