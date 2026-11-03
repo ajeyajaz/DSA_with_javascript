@@ -3,38 +3,27 @@
 
 
 
-class Solution {    
-    GCD(n1, n2){
+class Solution {
+    GCD(n1, n2) {
 
-        const n = Math.min(n1, n2);
-        const divisorN1 = new Set();
+        const minN = Math.min(n1, n2);
+        let commonDivisor =  0;
 
-        // n1 
-        for (let i = 1; i * i <= n; i++){
+        for(let i = 1; i * i <= minN; i++){
 
-             if(n1 % i === 0){
-                divisorN1.add(i);
-                divisorN1.add(n1 / i);
+            if(n1 % i === 0){
+                if(n2 % i === 0){
+                    commonDivisor = Math.max(commonDivisor, i);
+                }
             }
-        }
+            
+            const num = minN / i;
 
-        // n2
-        let greatestDivisor = 0;
-        for(let i = 1; i * i <= n; i++){
-
-            if(n2 % i === 0){
-
-                if(divisorN1.has(i)){
-                    greatestDivisor = Math.max(greatestDivisor,  i);
-                }
-
-                if(divisorN1.has(n2 / i)){
-                    greatestDivisor = Math.max(greatestDivisor,  n2 / i);
-                }
+            if(n1 % num === 0){
+                if(n2 % num === 0) commonDivisor = Math.max(commonDivisor, num)
+            }
                 
-            }
+        }
+        return commonDivisor;
     }
-
-    return greatestDivisor;
-}
 }
