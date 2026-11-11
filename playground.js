@@ -6,3 +6,4 @@ var user = {
     age: 40
 };
 console.log(user);
+@
