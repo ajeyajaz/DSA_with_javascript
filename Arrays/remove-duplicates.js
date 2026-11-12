@@ -1,21 +1,20 @@
+// Time: O(N)
+// Space: O(1)
+
 /**
  * @param {number[]} nums
  * @return {number}
  */
+var removeDuplicates = function (nums) {
 
-//  Time Complexity O(N)
-// Space Complexity O(1)
+    let j = 0;
+    for (let i = 0; i < nums.length; i++) {
 
-var removeDuplicates = function(nums) {
-
-    let k = 0;
-    for(let i = 0; i < nums.length; i++){
-
-        if(nums[k] !== nums[i]){
-            nums[++k] = nums[i];
+        if (nums[j] !== nums[i]) {
+            nums[++j] = nums[i];
         }
-
-        
     }
-    return k+1;
+
+    return j + 1
+
 };
