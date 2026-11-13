@@ -1,5 +1,5 @@
 //  Time: O(Max(nums1, nums2));
-// time: O(nums1 + nums2)
+// Space : O(nums1 + nums2)
 
 
 class Solution {
